@@ -9,9 +9,18 @@
 </head>
 <body>
     <main>
+        <h2>Pesquisar Consoles:</h2>
+        <div class="console-espaço">
+            <div id="console-espaço-input">
+                <input type="number" id="idConsole" placeholder="Digite o Id do console">
+                <button id="buttonConsole" onclick="findByIdConsole()">Escolher</button>
+            </div>
+        </div>
+
+    
         <h2>Disponíveis:</h2>
         <div class="card-main">
-           
+           <div class="card-all" id="cardList"></div>
         </div>
     </main>
 
