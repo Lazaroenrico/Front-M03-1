@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
-body,
-html {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -15,7 +15,7 @@ main {
   position: relative;
   background-image: radial-gradient(
     farthest-corner at 40px 40px,
-    #021e36 60%,
+    #021e36 40%,
     #363d5c 80%
   );
   min-height: calc(100vh - 60px);
@@ -29,13 +29,12 @@ main {
 main > h2 {
   display: flex;
   justify-content: space-around;
-  color: #c6b8e6;
+  color: #ad57c7;
 }
 
 main > div {
   display: flex;
   justify-content: center;
-  color: rgb(0, 0, 0);
 }
 
 .card-main {
@@ -74,7 +73,7 @@ main > div {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 10px;
-  width: 315px;
+  width: 215px;
   display: flex;
   justify-content: space-around;
 }
@@ -100,21 +99,25 @@ main > div {
   flex-direction: column;
 }
 
-.card-name {
+.card-name,
+.card2-name{
   font-size: 1.5em;
   font-weight: 700;
   line-height: 100%;
 }
 
-.card-description{
+.card-description ,
+.card2-description{
   font-size: 0.85em;
 }
 
-.card-price {
+.card-price,
+.card2-price {
   color: darkviolet;
 }
 
-.PaletaListaItem__foto {
+.card-image,
+.card2-image {
   height: 150px;
   margin-right: -60px;
 }
