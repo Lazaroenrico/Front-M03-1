@@ -1,32 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Console</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <main>
-        <h2>Console Escolhido:</h2>
-        <div class="console-space">
-            <div id="console-space-input">
-                <input type="number" id="idConsole" placeholder="Digite o Id do console">
-                <button id="buttonConsole" onclick="findByIdConsole()">Escolher</button>
-            </div>
-            <div id="consoleChosen">
+      <header class="Home__header Header">
+        <div class="row">
+          <div class="Header__logo Logo">
+            <img
+              src="./assets/img/icons8-console-64.png"
+              alt="Logo Console"
+              class="Logo__icone"
+            />
+            <span class="Logo__titulo"> Console </span>
+          </div>
 
+          <div class="Header__opcoes Opcoes">
+            <div class="Opcoes__sacola Sacola">
+              <img
+                src="./assets/img/icons8-bag-64.png"
+                width="40px"
+                class="Sacola__icone"
+                alt="Sacola de compras"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="button-modal-create">
+        <button type="button" class="button-style" onclick="openModalRegister()">Cadastrar Console</button>
+    </section>
+
+    <section class="modal-overlay" id="overlay">
+
+        <div class="modal">
+
+            <div class="modal-header">
+                <h2>Cadastrar uma console</h2>
+                <a onclick="closeModalRegister()" class="close-modal">x</a>
+            </div>
+
+            <div class="modal-body">
+                <div>
+                    <input type="text" name="name" id="name" placeholder="Nome do Console">
+                    <input type="number" name="price" id="price" placeholder="Preço do Console">
+                    <textarea type="text" name="description" id="description" placeholder="Descrição do Console"
+                        rows="3"></textarea>
+                    <input type="text" name="image" id="image" placeholder="Link da Foto do Console">
+                    <button onclick="createConsole()">Cadastrar</button>
+                </div>
             </div>
         </div>
+    </section>
 
-    
-        <h2>Disponíveis:</h2>
-        <div class="card-main">
-           <div class="card-all" id="cardList"></div>
         </div>
+      </section>
+
+      <h2>Pesquisar Console:</h2>
+      <div class="console-space">
+        <div id="console-space-input">
+          <input
+            type="number"
+            id="idConsole"
+            placeholder="Digite o Id do console"
+          />
+          <button class="button-style" onclick="findByIdConsole()">
+            Escolher
+          </button>
+        </div>
+        <div id="consoleChosen"></div>
+      </div>
+
+      <h2>Consoles Disponíveis:</h2>
+      <div class="card-main">
+        <div class="card-all" id="cardList"></div>
+      </div>
     </main>
 
     <script src="./assets/script.js"></script>
-</body>
+  </body>
 </html>
