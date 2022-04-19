@@ -14,11 +14,9 @@ body {
 
 main {
   position: relative;
-  background-image: radial-gradient(
-    farthest-corner at 40px 40px,
-    #021e36 40%,
-    #363d5c 80%
-  );
+  background-image: radial-gradient(farthest-corner at 40px 40px,
+      #021e36 40%,
+      #363d5c 80%);
   min-height: calc(100vh - 60px);
   margin: 15px;
   padding: 15px;
@@ -28,13 +26,13 @@ main {
   border: 2px solid black;
 }
 
-main > h2 {
+main>h2 {
   display: flex;
   justify-content: space-around;
   color: #c3c3c3;
 }
 
-main > div {
+main>div {
   display: flex;
   justify-content: center;
 }
@@ -69,24 +67,32 @@ main > div {
   }
 }
 
-.card-list,
-.card-container {
+.card-list {
   font-family: 'Exo';
   background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 10px;
-  width: 215px;
   display: flex;
   justify-content: space-around;
 }
 
+.card-list-container {
+  width: 74%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
 .card-list {
   margin: 20px 0;
-  height: 150px;
   width: auto;
+  height: auto;
 }
 
 @media (max-width: 400px) {
+
   .card-list,
   .card-container {
     width: 210px;
@@ -94,35 +100,37 @@ main > div {
   }
 }
 
-.card-list > div,
-.card-container > div {
+.card-list>div {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
 
-.card-name{
+.card-name {
   font-size: 1.5em;
   font-weight: 700;
   line-height: 100%;
 }
 
-.card-description{
-  font-size: 0.85em;
+.card-description {
+  padding-top: 10px;
+  width: 100%;
+  font-size: 0.80em;
 }
 
-.card-price{
+.card-price {
   display: flex;
   margin: 0 auto;
-  color: #4660ee;
+  padding-top: 10px;
+  color: #273bad;
 }
 
-.card-img{
+.card-img {
   border-radius: 1rem;
+  width: 50%;
   height: 150px;
-  padding: 0 .3rem 0 .4rem ;
+  padding: 0 .3rem 0 .4rem;
 }
-
 
 /* --------------- Pesquisa-----------------*/
 .console-space {
@@ -200,7 +208,7 @@ main > div {
 
 .Logo__icone {
   position: absolute;
-  width:65px;
+  width: 65px;
   left: 26px;
   top: 25px;
 }
@@ -221,7 +229,7 @@ main > div {
   position: absolute;
   font-size: 0.9em;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   border-radius: 50%;
   bottom: 0;
@@ -254,9 +262,27 @@ main > div {
   }
 }
 
-/* -----------  Create ------------*/ 
+@media (max-width: 375px) {
+  .Header {
+    max-width: 370px;
+  }
 
-.modal-overlay{
+  .Logo__titulo {
+    font-size: 1rem;
+  }
+
+  #idConsole {
+    max-width: 200px;
+  }
+
+  .button-style {
+    max-width: 210px;
+  }
+}
+
+/* -----------  Create ------------*/
+
+.modal-overlay {
   background-color: #00000050;
   width: 100vw;
   height: 100vh;
@@ -283,23 +309,21 @@ main > div {
   overflow: hidden;
 }
 
-.modal-header{
+.modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: radial-gradient(
-    farthest-corner at 40px 40px,
-    #1b2227 50%,
-    #2e3a41 100%
-  );
+  background-image: radial-gradient(farthest-corner at 40px 40px,
+      #1b2227 50%,
+      #2e3a41 100%);
   padding: 1rem;
 }
 
-.modal-header h2{
+.modal-header h2 {
   color: #5e7a84;
 }
 
-.close-modal{
+.close-modal {
   text-decoration: none;
   color: #f3f3f3;
   font-size: 1.5rem;
@@ -308,11 +332,11 @@ main > div {
   cursor: pointer;
 }
 
-.close-modal:hover{
+.close-modal:hover {
   transform: scale(1);
 }
 
-.modal-body{
+.modal-body {
   padding: .5rem 1rem;
 }
 
@@ -323,7 +347,8 @@ main > div {
   justify-content: center;
 }
 
-.modal-body div input, textarea{
+.modal-body div input,
+textarea {
   width: 100%;
   padding: .5rem;
   font-size: .8rem;
@@ -345,12 +370,109 @@ main > div {
   transition: all 0.3s ease-in-out;
 }
 
-.modal-body div button:hover{
+.modal-body div button:hover {
   background-color: #0097ce;
   color: #fff;
 }
 
-.button-modal-create{
+.modal-body p {
+  display: flex;
+  justify-content: center;
+}
+
+.button-modal-create {
   display: flex;
   justify-content: flex-end;
+}
+
+/*---- DELETE E EDITAR ------*/
+
+.Acoes {
+  display: flex;
+  margin: 10px;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  border-radius: .3rem;
+  padding: 5px;
+  max-width: 280px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 48%;
+  transition: all 0.3s ease-in-out;
+}
+
+.Acoes-edit {
+  color: #003cff;
+  border: solid 1px #003cff;
+  background-color: transparent;
+}
+
+.Acoes-edit:hover {
+  color: #fff;
+  background-color: #003cff;
+}
+
+.Acoes-delete {
+  color: #ff0000;
+  border: solid 1px #ff0000;
+  background-color: transparent;
+}
+
+.Acoes-delete:hover {
+  color: #fff;
+  background-color: #ff0000;
+}
+
+.modal-body-delete {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal-body-delete p {
+  width: 100%;
+  text-align: center;
+  padding: 23px;
+  font-size: 18px;
+}
+
+.btns-delete {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  font-size: 13px;
+  margin-right: 10px;
+  border-radius: 16px;
+  width: 32%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-delete-no {
+  color: #ff0000;
+  border: solid 1px #ff0000;
+}
+
+.btn-delete-no:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.btn-delete-yes {
+  color: #00b309;
+  border: solid 1px #00b309;
+}
+
+.btn-delete-yes:hover {
+  background-color: #00b309;
+  color: #fff;
 }
